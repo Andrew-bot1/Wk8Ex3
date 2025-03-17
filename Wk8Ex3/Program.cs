@@ -41,8 +41,8 @@ namespace Wk8Ex3
             //enter loop to read file until there are no more lines
             while ((line = reader.ReadLine()) != null)
             {
-                //check if the line is empty or contains the header "Age"
-                if (line.Contains("Age"))
+                //check if the line is empty or contains the header "Grade"
+                if (line.Contains("Grade"))
                 {
                     //skip the header line
                     continue;
@@ -53,7 +53,7 @@ namespace Wk8Ex3
                     string[] words = line.Split(',');
 
                     string name = words[0];
-                    //convert the second column to an integer for age
+                    //convert the second column to an integer for grade
                     int grade = Convert.ToInt32(words[1]);
 
                     //create a new student object and add it to the list
@@ -78,7 +78,7 @@ namespace Wk8Ex3
             //call method to separate the data from CSV file by comma
             List<Student> seperatedStudents = new List <Student>(ReadCsv(fileName));
 
-            //loop through the list of students and print their names and ages
+            //loop through the list of students and print their names and grades
             foreach (Student student in seperatedStudents)
             {
                 Console.WriteLine($"Name: {student.Name}, Grade: {student.Grade}");
